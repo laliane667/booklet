@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/mainStyle.css">
 </head>
-<body>
+<body onload="updateImage()">
     <nav class="navbar">
         <div class="nav__container">
             
             <div class="nav__list">
                 <ul>
-                    <li><a href="/">CATEGORIES</a></li>
-                    <li><a href="/">ABOUT</a></li>
+                    <li><a class="nav__button" href="/">CATEGORIES</a></li>
+                    <li><a class="nav__button" href="/">ABOUT</a></li>
                 </ul>
             </div>
     
@@ -29,9 +29,9 @@
     
             <div class="nav__list">
                 <ul>
-                    <li><a href="/">SEARCH</a></li>
-                    <li><a href="/">LOGIN</a></li>
-                    <li><a href="/">CART(0)</a></li>
+                    <li><a class="nav__button" href="/">SEARCH</a></li>
+                    <li class="nav__button" onclick="javascript: openOrCloseBasket(0)">LOGIN</li>
+                    <li class="nav__button" onclick="javascript: openOrCloseBasket(1)">CART(0)</li>
                 </ul>
             </div>
         </div>
@@ -40,8 +40,389 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <script src="js/app.js"></script>
+        
     </nav>
-    <img class="img__background" src="src/img/background.png">
+    <div class="sidebar__container" data-basket-content>
+        <!-- <h1 class="basket_title">Basket</h1> -->
+        <div class="basket_content">
+            
+        </div>
+    </div>
+
+    <div class="img__container">
+        <img class="img__background" src="src/img/background2.png">
+    </div>
+    <div class="main_container">
+        <div class="main_content">
+            <!-- <div class="shop_button" onclick="javascript: openOrCloseBasket()">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div> -->
+
+            <div class="trash_container"></div>
+
+            <h1 class="categorie__title">FANTASY</h1>
+    
+            <div class="categoryImg fantasyCat"></div>
+            <div class="elem_container">
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-1" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b1_cover.jpeg" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1>Harry Potter</h1>
+                        <hr>
+                        <h3>TOME 6</h3>
+                        <hr>
+                        <h4>Harry Potter and the half-blood prince</h4>
+                        <hr>
+                        <h2>from £<span>22.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(1)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="categorie__title">CULTURE</h1>
+            <div class="categoryImg cultureCat"></div>
+            <div class="elem_container" id="myDiv">
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elem" id="elem-2" >
+                    <div class="img_container">
+                        <img class="img" src="src/img/books/b2_cover.webp" alt="image 1 missing">
+                        <div class="star_container">
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h1>&star;</h1>
+                            <h4>4.5</h4>
+                        </div>
+                    </div>
+                    <div class="data_container">
+                        <h1 class="book_name">L'Art de la guerre</h1>
+                        <hr>
+                        <h3>Les treize articles</h3>
+                        <hr>
+                        <h4>-</h4>
+                        <hr>
+                        <h2>from £<span class="book_price">3.99</span></h2>
+                        <hr>
+                        <div class="data_container_footer">
+                            <a href="/">Read more</a>
+                            <button onclick="javascript: addToBasket(2)">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    
+    <script src="js/app.js"></script>
 </body>
 </html>
